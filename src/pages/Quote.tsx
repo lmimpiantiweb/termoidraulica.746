@@ -17,6 +17,7 @@ const Quote = () => {
     const [step, setStep] = useState<Step>('category');
     const [category, setCategory] = useState<string | null>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [privacyAccepted, setPrivacyAccepted] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onDetailsSubmit = () => setStep('contact');
@@ -180,16 +181,27 @@ ${data.fullName}
                                     <div className="bg-blue-100 p-2 rounded-full shrink-0">
                                         <CheckCircle className="w-4 h-4 text-blue-600" />
                                     </div>
-                                    <p className="text-sm text-slate-600 leading-relaxed">
-                                        Inviando la richiesta dichiari di aver letto e accettato la <Link to="/privacy" className="font-bold text-slate-900 underline hover:text-secondary" target="_blank">Privacy Policy</Link>.
-                                    </p>
+                                    <div className="flex items-start gap-3">
+                                        <div className="pt-1">
+                                            <input
+                                                type="checkbox"
+                                                id="privacy"
+                                                checked={privacyAccepted}
+                                                onChange={(e) => setPrivacyAccepted(e.target.checked)}
+                                                className="w-5 h-5 rounded border-slate-300 text-secondary focus:ring-secondary/20 cursor-pointer"
+                                            />
+                                        </div>
+                                        <label htmlFor="privacy" className="text-sm text-slate-600 leading-relaxed cursor-pointer select-none">
+                                            Ho letto e accetto la <Link to="/privacy" className="font-bold text-slate-900 underline hover:text-secondary" target="_blank">Privacy Policy</Link>
+                                        </label>
+                                    </div>
                                 </div>
 
                                 <div className="flex justify-end pt-4">
                                     <button
                                         type="submit"
-                                        disabled={isSubmitting}
-                                        className="w-full md:w-auto px-10 py-4 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-colors flex items-center justify-center gap-2"
+                                        disabled={isSubmitting || !privacyAccepted}
+                                        className={`w-full md:w-auto px-10 py-4 text-white rounded-xl font-bold transition-all flex items-center justify-center gap-2 ${isSubmitting || !privacyAccepted ? 'bg-slate-400 cursor-not-allowed' : 'bg-slate-900 hover:bg-slate-800'}`}
                                     >
                                         {isSubmitting ? <Loader2 className="w-5 h-5 animate-spin" /> : 'Invia Richiesta'}
                                     </button>
