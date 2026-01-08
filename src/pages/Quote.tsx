@@ -83,7 +83,7 @@ ${data.fullName}
                     {step === 'category' && (
                         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-8">
                             <h2 className="text-2xl font-bold text-slate-900 text-center">Di cosa hai bisogno?</h2>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div className="grid grid-cols-2 gap-4">
                                 {categories.map((cat) => (
                                     <button
                                         key={cat.id}
