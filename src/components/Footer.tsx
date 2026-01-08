@@ -26,7 +26,6 @@ const Footer = () => {
                         </a>
                     </div>
                 </div>
-                </div>
 
                 {/* Quick Links */}
                 <div>
