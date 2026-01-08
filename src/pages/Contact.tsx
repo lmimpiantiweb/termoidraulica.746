@@ -35,22 +35,22 @@ const Contact = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="bg-secondary text-white p-4 md:p-8 rounded-3xl shadow-xl transform hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center text-center relative overflow-hidden group h-full justify-between"
+                        className="bg-secondary text-white p-5 md:p-8 rounded-[2rem] shadow-xl shadow-secondary/20 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center text-center relative overflow-hidden group h-full justify-between"
                     >
                         <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                             <Phone className="w-16 h-16 md:w-32 md:h-32" />
                         </div>
-                        <div className="bg-white/20 w-10 h-10 md:w-16 md:h-16 rounded-full flex items-center justify-center mb-3 md:mb-6 backdrop-blur-sm shrink-0">
-                            <Phone className="w-5 h-5 md:w-8 md:h-8 text-white" />
+                        <div className="bg-white/20 w-14 h-14 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-4 md:mb-6 backdrop-blur-sm shrink-0 shadow-lg">
+                            <Phone className="w-6 h-6 md:w-9 md:h-9 text-white" />
                         </div>
-                        <div>
-                            <h3 className="text-lg md:text-2xl font-bold mb-1 md:mb-2">Urgenze & Telefono</h3>
-                            <p className="text-white/80 mb-3 md:mb-6 text-xs md:text-base">La via più veloce per parlare con noi.</p>
+                        <div className="mb-4">
+                            <h3 className="text-lg md:text-2xl font-bold mb-1">Urgenze & Telefono</h3>
+                            <p className="text-white/80 text-xs md:text-base leading-tight">La via più veloce per parlare con noi.</p>
                         </div>
-                        <a href="tel:+393398321087" className="text-xl md:text-3xl font-bold hover:scale-105 transition-transform inline-block whitespace-nowrap">
+                        <a href="tel:+393398321087" className="text-lg md:text-3xl font-bold hover:scale-105 transition-transform inline-block whitespace-nowrap bg-white/10 px-4 py-2 rounded-xl">
                             +39 339 832 1087
                         </a>
-                        <div className="mt-2 md:mt-4 inline-flex items-center gap-2 bg-white/20 px-3 py-1 md:px-4 md:py-1 rounded-full text-xs md:text-sm font-medium">
+                        <div className="mt-3 md:mt-4 inline-flex items-center gap-2 bg-white/20 px-3 py-1 md:px-4 md:py-1.5 rounded-full text-xs md:text-sm font-medium">
                             <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-green-400 rounded-full animate-pulse" /> Disponibili
                         </div>
                     </motion.div>
@@ -60,24 +60,24 @@ const Contact = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3 }}
-                        className="bg-white p-4 md:p-8 rounded-3xl shadow-xl border border-slate-100 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center text-center h-full justify-between"
+                        className="bg-white p-5 md:p-8 rounded-[2rem] shadow-xl shadow-slate-200/50 border border-slate-100 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center text-center h-full justify-between"
                     >
-                        <div className="bg-slate-100 w-10 h-10 md:w-16 md:h-16 rounded-full flex items-center justify-center mb-3 md:mb-6 text-slate-600 shrink-0">
-                            <Mail className="w-5 h-5 md:w-8 md:h-8" />
+                        <div className="bg-gradient-to-br from-slate-100 to-slate-200 w-14 h-14 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-4 md:mb-6 text-slate-700 shrink-0 shadow-inner">
+                            <Mail className="w-6 h-6 md:w-9 md:h-9" />
                         </div>
-                        <div>
-                            <h3 className="text-lg md:text-2xl font-bold text-slate-900 mb-1 md:mb-2">Email</h3>
-                            <p className="text-slate-500 mb-4 md:mb-8 text-xs md:text-base">Preferisci scriverci? Inviaci una mail.</p>
+                        <div className="mb-4">
+                            <h3 className="text-lg md:text-2xl font-bold text-slate-900 mb-1">Email</h3>
+                            <p className="text-slate-500 text-xs md:text-base leading-tight">Preferisci scriverci? Inviaci una mail.</p>
                         </div>
 
                         <a
                             href="mailto:lm.impianti.web@gmail.com"
-                            className="w-full py-3 md:py-4 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-colors flex items-center justify-center gap-2 text-sm md:text-base"
+                            className="w-full py-3 md:py-4 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-colors flex items-center justify-center gap-2 text-sm md:text-base shadow-lg"
                         >
                             <Mail className="w-4 h-4 md:w-5 md:h-5" /> Invia Email
                         </a>
 
-                        <div className="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-slate-100 w-full">
+                        <div className="mt-4 pt-4 border-t border-slate-100 w-full">
                             <p className="text-xs md:text-sm text-slate-500 mb-2">Oppure usa il wizard:</p>
                             <Link to="/preventivo" className="text-secondary font-bold hover:underline flex items-center justify-center gap-1 text-sm md:text-base">
                                 Preventivo Online <ArrowRight className="w-3 h-3 md:w-4 md:h-4" />
@@ -90,32 +90,24 @@ const Contact = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4 }}
-                        className="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center text-center"
+                        className="bg-white p-5 md:p-8 rounded-[2rem] shadow-xl shadow-slate-200/50 border border-slate-100 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center text-center h-full"
                     >
-                        <div className="bg-slate-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 text-slate-600">
-                            <Clock className="w-8 h-8" />
+                        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 w-14 h-14 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-4 md:mb-6 text-slate-700 shadow-inner">
+                            <Clock className="w-6 h-6 md:w-9 md:h-9 text-slate-600" />
                         </div>
-                        <h3 className="text-2xl font-bold text-slate-900 mb-2">Orari & Sede</h3>
-                        <div className="text-slate-500 space-y-4 mb-6">
-                            <p>
-                                <strong className="block text-slate-900 mb-1">Orari Apertura</strong>
-                                Lun - Ven: 08:00 - 18:00<br />
-                                Sabato: 08:00 - 13:00
-                            </p>
-                            <p>
-                                <strong className="block text-slate-900 mb-1">Sede Operativa</strong>
-                                Via Assietta, 6<br />
-                                10040 Druento (TO)
-                            </p>
+                        <h3 className="text-lg md:text-2xl font-bold text-slate-900 mb-3 md:mb-4">Orari & Sede</h3>
+                        <div className="text-slate-500 space-y-3 md:space-y-4 mb-2 w-full text-center">
+                            <div className="bg-slate-50 p-3 md:p-4 rounded-xl">
+                                <strong className="block text-slate-900 mb-1 text-xs md:text-sm uppercase tracking-wide">Orari Apertura</strong>
+                                <span className="text-xs md:text-base">Lun - Ven: 08:00 - 18:00</span><br />
+                                <span className="text-xs md:text-base">Sabato: 08:00 - 13:00</span>
+                            </div>
+                            <div className="bg-slate-50 p-3 md:p-4 rounded-xl">
+                                <strong className="block text-slate-900 mb-1 text-xs md:text-sm uppercase tracking-wide">Sede Operativa</strong>
+                                <span className="text-xs md:text-base">Via Assietta, 6</span><br />
+                                <span className="text-xs md:text-base">10040 Druento (TO)</span>
+                            </div>
                         </div>
-                        {/* 
-                        <div className="mt-auto pt-4 border-t border-slate-100 w-full">
-                            <p className="text-secondary font-bold flex items-center justify-center gap-2">
-                                <Clock className="w-4 h-4" /> Pronto Intervento H24
-                            </p>
-                        </div> 
-                        */}
-
                     </motion.div>
 
                     {/* WhatsApp Card */}
