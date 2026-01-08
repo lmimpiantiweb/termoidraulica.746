@@ -10,7 +10,7 @@ const Home = () => {
     return (
         <div className="w-full overflow-hidden">
             {/* Hero Section */}
-            <section className="relative min-h-screen flex items-center justify-center bg-slate-900 border-b border-slate-800 pb-32 overflow-hidden">
+            <section className="relative min-h-screen flex items-center justify-center bg-slate-900 border-b border-slate-800 pb-48 overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <motion.div
                         initial={{ scale: 1.1 }}
@@ -60,7 +60,7 @@ const Home = () => {
 
             {/* Services Preview - Now Primary/Overlapping */}
             {/* Services Preview */}
-            <section className="py-12 md:py-20 bg-white relative z-20">
+            <section className="py-12 md:py-20 bg-white relative z-20 rounded-t-[3rem] -mt-20 shadow-[0_-20px_40px_-15px_rgba(0,0,0,0.1)]">
                 <div className="container mx-auto px-4 relative">
                     <div className="text-center mb-12 md:mb-16">
                         <div className="inline-block px-4 py-1.5 bg-slate-100 text-secondary rounded-full font-bold tracking-wider uppercase text-xs md:text-sm mb-4">
@@ -101,19 +101,22 @@ const Home = () => {
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-10 [&>*:nth-child(odd):last-child]:col-span-2 md:[&>*:nth-child(odd):last-child]:col-span-1">
                         <BenefitCard
-                            icon={<Clock className="w-full h-full text-secondary" />}
-                            title="Interventi Rapidi"
-                            description="Operativi per emergenze con tempistiche ridotte."
+                            icon={<Clock className="w-full h-full text-white" />}
+                            title="Rapidità ed Efficienza"
+                            description="Non amiamo farti aspettare. Interveniamo con tempistiche certe per ripristinare il tuo comfort."
+                            gradient="from-blue-500 to-cyan-400"
                         />
                         <BenefitCard
-                            icon={<ShieldCheck className="w-full h-full text-secondary" />}
-                            title="Lavoro Garantito"
-                            description="Tutti gli interventi sono coperti da garanzia 100%."
+                            icon={<ShieldCheck className="w-full h-full text-white" />}
+                            title="Garanzia di Qualità"
+                            description="Ogni intervento è coperto da garanzia completa. Usiamo solo ricambi originali per riparazioni durature."
+                            gradient="from-emerald-500 to-teal-400"
                         />
                         <BenefitCard
-                            icon={<Wrench className="w-full h-full text-secondary" />}
-                            title="Qualifica Certificata"
-                            description="Tecnici specializzati e aggiornati sulle normative."
+                            icon={<Wrench className="w-full h-full text-white" />}
+                            title="Tecnici Abilitati"
+                            description="La sicurezza non è un optional. Il nostro team è altamente qualificato e possiede tutte le certificazioni."
+                            gradient="from-orange-500 to-amber-400"
                         />
                     </div>
                 </div>
@@ -185,18 +188,19 @@ const Home = () => {
 };
 
 // Subcontracts
-const BenefitCard = ({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) => (
+const BenefitCard = ({ icon, title, description, gradient }: { icon: React.ReactNode, title: string, description: string, gradient: string }) => (
     <motion.div
-        whileHover={{ y: -5 }}
-        className="group p-5 md:p-8 bg-white rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/40 hover:shadow-2xl hover:shadow-secondary/5 transition-all duration-300 h-full flex flex-col items-center text-center"
+        whileHover={{ y: -8 }}
+        className="group relative p-6 md:p-8 bg-white/80 backdrop-blur-sm rounded-[2rem] border border-white/50 shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:shadow-secondary/10 transition-all duration-300 h-full flex flex-col items-center text-center overflow-hidden"
     >
-        <div className="mb-4 md:mb-6 p-3 md:p-5 bg-slate-50 rounded-2xl w-12 h-12 md:w-20 md:h-20 flex items-center justify-center group-hover:bg-secondary/10 transition-colors">
-            <div className="w-6 h-6 md:w-10 md:h-10 text-secondary transition-transform group-hover:scale-110 duration-300">
+        <div className={`absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r ${gradient}`} />
+        <div className={`mb-5 md:mb-6 p-4 rounded-2xl w-14 h-14 md:w-20 md:h-20 flex items-center justify-center bg-gradient-to-br ${gradient} shadow-lg shadow-black/5 group-hover:scale-110 transition-transform duration-500`}>
+            <div className="w-6 h-6 md:w-10 md:h-10">
                 {icon}
             </div>
         </div>
-        <h3 className="text-base md:text-xl font-bold text-slate-900 mb-2 md:mb-3">{title}</h3>
-        <p className="text-sm md:text-base text-slate-500 leading-relaxed max-w-xs">{description}</p>
+        <h3 className="text-lg md:text-2xl font-bold text-slate-800 mb-3">{title}</h3>
+        <p className="text-sm md:text-base text-slate-600 leading-relaxed max-w-xs">{description}</p>
     </motion.div>
 );
 
