@@ -185,44 +185,40 @@ const Home = () => {
 
 // Subcontracts
 const BenefitCard = ({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) => (
-const BenefitCard = ({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) => (
-        <motion.div
-            whileHover={{ y: -5 }}
-            className="group p-5 md:p-8 bg-white rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/40 hover:shadow-2xl hover:shadow-secondary/5 transition-all duration-300 h-full flex flex-col items-center text-center"
-        >
-            <div className="mb-4 md:mb-6 p-3 md:p-5 bg-slate-50 rounded-2xl w-12 h-12 md:w-20 md:h-20 flex items-center justify-center group-hover:bg-secondary/10 transition-colors">
-                <div className="w-6 h-6 md:w-10 md:h-10 text-secondary transition-transform group-hover:scale-110 duration-300">
-                    {icon}
-                </div>
+    <motion.div
+        whileHover={{ y: -5 }}
+        className="group p-5 md:p-8 bg-white rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/40 hover:shadow-2xl hover:shadow-secondary/5 transition-all duration-300 h-full flex flex-col items-center text-center"
+    >
+        <div className="mb-4 md:mb-6 p-3 md:p-5 bg-slate-50 rounded-2xl w-12 h-12 md:w-20 md:h-20 flex items-center justify-center group-hover:bg-secondary/10 transition-colors">
+            <div className="w-6 h-6 md:w-10 md:h-10 text-secondary transition-transform group-hover:scale-110 duration-300">
+                {icon}
             </div>
-            <h3 className="text-base md:text-xl font-bold text-slate-900 mb-2 md:mb-3">{title}</h3>
-            <p className="text-sm md:text-base text-slate-500 leading-relaxed max-w-xs">{description}</p>
-        </motion.div>
-    );
+        </div>
+        <h3 className="text-base md:text-xl font-bold text-slate-900 mb-2 md:mb-3">{title}</h3>
+        <p className="text-sm md:text-base text-slate-500 leading-relaxed max-w-xs">{description}</p>
+    </motion.div>
 );
 
 const ServiceCard = ({ title, items, image }: { title: string, items: string[], image: string }) => (
-const ServiceCard = ({ title, items, image }: { title: string, items: string[], image: string }) => (
-        <div className="group rounded-3xl overflow-hidden bg-white shadow-2xl shadow-slate-900/10 hover:shadow-3xl hover:shadow-slate-900/20 transition-all h-full flex flex-col duration-500 hover:-translate-y-1">
-            <div className="h-40 md:h-56 overflow-hidden relative shrink-0">
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-60 group-hover:opacity-40 transition-opacity z-10" />
-                <img src={image} alt={title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
-                <div className="absolute bottom-0 left-0 p-4 md:p-6 z-20">
-                    <h3 className="text-xl md:text-2xl font-bold text-white drop-shadow-md">{title}</h3>
-                </div>
-            </div>
-            <div className="p-4 md:p-8 flex-grow bg-white">
-                <ul className="space-y-2 md:space-y-3">
-                    {items.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2 md:gap-3 text-slate-600 text-sm md:text-base group/item">
-                            <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-secondary shrink-0 mt-0.5 group-hover/item:text-green-500 transition-colors" />
-                            <span className="font-medium">{item}</span>
-                        </li>
-                    ))}
-                </ul>
+    <div className="group rounded-3xl overflow-hidden bg-white shadow-2xl shadow-slate-900/10 hover:shadow-3xl hover:shadow-slate-900/20 transition-all h-full flex flex-col duration-500 hover:-translate-y-1">
+        <div className="h-40 md:h-56 overflow-hidden relative shrink-0">
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-60 group-hover:opacity-40 transition-opacity z-10" />
+            <img src={image} alt={title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+            <div className="absolute bottom-0 left-0 p-4 md:p-6 z-20">
+                <h3 className="text-xl md:text-2xl font-bold text-white drop-shadow-md">{title}</h3>
             </div>
         </div>
-    );
+        <div className="p-4 md:p-8 flex-grow bg-white">
+            <ul className="space-y-2 md:space-y-3">
+                {items.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2 md:gap-3 text-slate-600 text-sm md:text-base group/item">
+                        <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-secondary shrink-0 mt-0.5 group-hover/item:text-green-500 transition-colors" />
+                        <span className="font-medium">{item}</span>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    </div>
 );
 
 export default Home;
