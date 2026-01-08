@@ -6,17 +6,6 @@ import { Link } from 'react-router-dom';
 
 type Step = 'category' | 'details' | 'contact' | 'success';
 
-const GOOGLE_FORM_ACTION_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfcXyBYP9S2Vj8NOpy3BZi8EhNCDb6oY9KPtzlyGjIqRmh8XA/formResponse';
-
-const FIELD_IDS = {
-    category: 'entry.700896625',
-    description: 'entry.864693341',
-    fullName: 'entry.235223577',
-    email: 'entry.287687410',
-    phone: 'entry.738990307',
-    location: 'entry.1758535097',
-};
-
 const categories = [
     { id: 'heating', label: 'Riscaldamento', icon: <Wrench className="w-8 h-8" />, desc: 'Caldaie, Termosifoni, Pompe di calore' },
     { id: 'cooling', label: 'Climatizzazione', icon: <Snowflake className="w-8 h-8" />, desc: 'Condizionatori, Split, Manutenzione' },
@@ -36,37 +25,39 @@ const Quote = () => {
         setIsSubmitting(true);
 
         try {
-            // Use URLSearchParams instead of FormData for better compatibility
-            const params = new URLSearchParams();
-
-            // Map fields to Google Form IDs
-            // Ensure category matches exactly what's in the form (if multiple choice)
             const selectedCategoryLabel = categories.find(c => c.id === category)?.label || category || '';
 
-            if (FIELD_IDS.category) params.append(FIELD_IDS.category, selectedCategoryLabel);
-            if (FIELD_IDS.description) params.append(FIELD_IDS.description, data.description || '');
-            if (FIELD_IDS.fullName) params.append(FIELD_IDS.fullName, data.fullName || '');
-            if (FIELD_IDS.email) params.append(FIELD_IDS.email, data.email || '');
-            if (FIELD_IDS.phone) params.append(FIELD_IDS.phone, data.phone || '');
-            if (FIELD_IDS.location) params.append(FIELD_IDS.location, data.location || '');
+            const subject = `Richiesta Preventivo: ${selectedCategoryLabel}`;
+            const body = `
+Gentile LM Impianti,
 
-            // Submit to Google Forms
-            await fetch(GOOGLE_FORM_ACTION_URL, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: params
-            });
+Vorrei richiedere un preventivo per: ${selectedCategoryLabel}
 
-            // Minimum delay for better UX
+Dettagli Richiesta:
+${data.description}
+
+I miei dati:
+Nome: ${data.fullName}
+Email: ${data.email}
+Telefono: ${data.phone}
+Zona: ${data.location}
+
+Cordiali saluti,
+${data.fullName}
+            `.trim();
+
+            const mailtoLink = `mailto:lm.impianti.web@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            // Open default mail client
+            window.location.href = mailtoLink;
+
+            // Show success message after a short delay to allow the mail client to open
             await new Promise(resolve => setTimeout(resolve, 1000));
 
             setStep('success');
         } catch (error) {
             console.error('Error submitting form:', error);
-            alert('Si è verificato un errore nell\'invio della richiesta. Riprova più tardi o contattaci telefonicamente.');
+            alert('Si è verificato un errore. Per favore contattaci telefonicamente.');
         } finally {
             setIsSubmitting(false);
         }
