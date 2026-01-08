@@ -54,35 +54,12 @@ const Home = () => {
 
             </section>
 
-            {/* Benefits Section */}
+            {/* Services Preview - Now Primary/Overlapping */}
             <section className="py-12 md:py-20 bg-white relative z-20">
                 <div className="container mx-auto px-4 -mt-32 md:-mt-48">
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-8 [&>*:nth-child(odd):last-child]:col-span-2 md:[&>*:nth-child(odd):last-child]:col-span-1">
-                        <BenefitCard
-                            icon={<Clock className="w-10 h-10 text-secondary" />}
-                            title="Interventi Rapidi"
-                            description="Siamo operativi per risolvere guasti e malfunzionamenti nel minor tempo possibile."
-                        />
-                        <BenefitCard
-                            icon={<ShieldCheck className="w-10 h-10 text-secondary" />}
-                            title="Lavoro Garantito"
-                            description="Tutti i nostri interventi sono coperti da garanzia. Utilizziamo solo ricambi originali e materiali di alta qualità."
-                        />
-                        <BenefitCard
-                            icon={<Wrench className="w-10 h-10 text-secondary" />}
-                            title="Qualifica Certificata"
-                            description="Il nostro team è composto da tecnici specializzati e costantemente aggiornati sulle ultime normative."
-                        />
-                    </div>
-                </div>
-            </section>
-
-            {/* Services Preview */}
-            <section className="py-12 md:py-20 bg-slate-50">
-                <div className="container mx-auto px-4">
                     <div className="text-center mb-10 md:mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4">I Nostri Servizi</h2>
-                        <p className="text-slate-600 max-w-2xl mx-auto">Offriamo una gamma completa di servizi termo-idraulici per privati e aziende.</p>
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">I Nostri Servizi</h2>
+                        <p className="text-slate-100 max-w-2xl mx-auto drop-shadow-md font-medium text-lg">Offriamo una gamma completa di servizi termo-idraulici per privati e aziende.</p>
                     </div>
 
                     <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 [&>*:nth-child(odd):last-child]:col-span-2 lg:[&>*:nth-child(odd):last-child]:col-span-1">
@@ -107,6 +84,29 @@ const Home = () => {
                         <Link to="/servizi" className="inline-flex items-center gap-2 text-secondary font-bold hover:underline">
                             Scopri tutti i servizi <ArrowRight className="w-4 h-4" />
                         </Link>
+                    </div>
+                </div>
+            </section>
+
+            {/* Benefits Section */}
+            <section className="py-12 md:py-20 bg-slate-50 relative z-10">
+                <div className="container mx-auto px-4">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-8 [&>*:nth-child(odd):last-child]:col-span-2 md:[&>*:nth-child(odd):last-child]:col-span-1">
+                        <BenefitCard
+                            icon={<Clock className="w-10 h-10 text-secondary" />}
+                            title="Interventi Rapidi"
+                            description="Siamo operativi per risolvere guasti e malfunzionamenti nel minor tempo possibile."
+                        />
+                        <BenefitCard
+                            icon={<ShieldCheck className="w-10 h-10 text-secondary" />}
+                            title="Lavoro Garantito"
+                            description="Tutti i nostri interventi sono coperti da garanzia. Utilizziamo solo ricambi originali e materiali di alta qualità."
+                        />
+                        <BenefitCard
+                            icon={<Wrench className="w-10 h-10 text-secondary" />}
+                            title="Qualifica Certificata"
+                            description="Il nostro team è composto da tecnici specializzati e costantemente aggiornati sulle ultime normative."
+                        />
                     </div>
                 </div>
             </section>
