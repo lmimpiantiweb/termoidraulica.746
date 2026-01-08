@@ -88,13 +88,15 @@ ${data.fullName}
                                     <button
                                         key={cat.id}
                                         onClick={() => { setCategory(cat.id); setStep('details'); }}
-                                        className="flex flex-col items-center p-8 border border-slate-200 rounded-2xl hover:border-secondary hover:bg-slate-50 hover:shadow-lg transition-all text-center group"
+                                        className="flex flex-col items-center p-4 md:p-8 border border-slate-200 rounded-2xl hover:border-secondary hover:bg-slate-50 hover:shadow-lg transition-all text-center group h-full justify-between"
                                     >
-                                        <div className="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center mb-4 text-slate-500 group-hover:bg-secondary group-hover:text-white transition-colors">
+                                        <div className="w-10 h-10 md:w-16 md:h-16 rounded-full bg-slate-100 flex items-center justify-center mb-2 md:mb-4 text-slate-500 group-hover:bg-secondary group-hover:text-white transition-colors shrink-0 [&>svg]:w-5 [&>svg]:h-5 md:[&>svg]:w-8 md:[&>svg]:h-8">
                                             {cat.icon}
                                         </div>
-                                        <h3 className="text-lg font-bold text-slate-900 mb-2">{cat.label}</h3>
-                                        <p className="text-sm text-slate-500">{cat.desc}</p>
+                                        <div>
+                                            <h3 className="text-sm md:text-lg font-bold text-slate-900 mb-1 md:mb-2">{cat.label}</h3>
+                                            <p className="text-xs md:text-sm text-slate-500">{cat.desc}</p>
+                                        </div>
                                     </button>
                                 ))}
                             </div>

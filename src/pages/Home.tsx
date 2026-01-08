@@ -180,26 +180,26 @@ const Home = () => {
 const BenefitCard = ({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) => (
     <motion.div
         whileHover={{ y: -5 }}
-        className="p-8 bg-white rounded-2xl border border-slate-100 shadow-xl shadow-slate-200/50"
+        className="p-4 md:p-8 bg-white rounded-2xl border border-slate-100 shadow-xl shadow-slate-200/50 h-full flex flex-col"
     >
-        <div className="mb-6 p-4 bg-secondary/10 rounded-2xl w-fit">{icon}</div>
-        <h3 className="text-xl font-bold text-slate-900 mb-3">{title}</h3>
-        <p className="text-slate-600 leading-relaxed">{description}</p>
+        <div className="mb-3 md:mb-6 p-2 md:p-4 bg-secondary/10 rounded-2xl w-fit transform scale-75 md:scale-100 origin-left">{icon}</div>
+        <h3 className="text-sm md:text-xl font-bold text-slate-900 mb-2 md:mb-3">{title}</h3>
+        <p className="text-xs md:text-base text-slate-600 leading-relaxed">{description}</p>
     </motion.div>
 );
 
 const ServiceCard = ({ title, items, image }: { title: string, items: string[], image: string }) => (
-    <div className="group rounded-2xl overflow-hidden bg-white border border-slate-100 shadow-lg hover:shadow-xl transition-all">
-        <div className="h-48 overflow-hidden relative">
+    <div className="group rounded-2xl overflow-hidden bg-white border border-slate-100 shadow-lg hover:shadow-xl transition-all h-full flex flex-col">
+        <div className="h-32 md:h-48 overflow-hidden relative shrink-0">
             <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-slate-900/10 transition-colors z-10" />
             <img src={image} alt={title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
         </div>
-        <div className="p-6">
-            <h3 className="text-2xl font-bold text-slate-900 mb-4">{title}</h3>
-            <ul className="space-y-3">
+        <div className="p-3 md:p-6 flex-grow">
+            <h3 className="text-lg md:text-2xl font-bold text-slate-900 mb-2 md:mb-4">{title}</h3>
+            <ul className="space-y-1.5 md:space-y-3">
                 {items.map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 text-slate-600">
-                        <CheckCircle className="w-4 h-4 text-green-500 shrink-0" />
+                    <li key={i} className="flex items-start gap-2 md:gap-3 text-slate-600 text-xs md:text-base">
+                        <CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-green-500 shrink-0 mt-0.5" />
                         <span>{item}</span>
                     </li>
                 ))}
