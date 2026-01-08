@@ -18,9 +18,9 @@ const Home = () => {
                         transition={{ duration: 10, ease: "easeOut" }}
                         className="w-full h-full"
                     >
-                        <img src={heroBg} alt="Background" className="w-full h-full object-cover opacity-60" />
+                        <img src={heroBg} alt="Background" className="w-full h-full object-cover opacity-100" />
                     </motion.div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-slate-900/30" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-slate-900/10" />
                 </div>
 
                 <div className="container mx-auto px-4 z-10 relative mt-20">
@@ -59,14 +59,15 @@ const Home = () => {
             </section>
 
             {/* Services Preview - Now Primary/Overlapping */}
+            {/* Services Preview */}
             <section className="py-12 md:py-20 bg-white relative z-20">
-                <div className="container mx-auto px-4 -mt-32 md:-mt-48 relative">
-                    <div className="text-center mb-12 md:mb-20">
-                        <div className="inline-block px-6 py-2 bg-slate-900/50 backdrop-blur-xl rounded-full border border-white/10 mb-6">
-                            <span className="text-secondary font-bold tracking-wider uppercase text-xs md:text-sm">I Nostri Servizi</span>
+                <div className="container mx-auto px-4 relative">
+                    <div className="text-center mb-12 md:mb-16">
+                        <div className="inline-block px-4 py-1.5 bg-slate-100 text-secondary rounded-full font-bold tracking-wider uppercase text-xs md:text-sm mb-4">
+                            I Nostri Servizi
                         </div>
-                        <h2 className="text-3xl md:text-6xl font-bold text-white mb-6 drop-shadow-xl tracking-tight">Soluzioni Complete</h2>
-                        <p className="text-slate-200 max-w-2xl mx-auto drop-shadow-md font-medium text-lg leading-relaxed antialiased opacity-90">Dall'installazione alla manutenzione, ci prendiamo cura del tuo impianto.</p>
+                        <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">Soluzioni Complete</h2>
+                        <p className="text-slate-600 max-w-2xl mx-auto font-medium text-lg leading-relaxed">Dall'installazione alla manutenzione, ci prendiamo cura del tuo impianto a 360°.</p>
                     </div>
 
                     <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 [&>*:nth-child(odd):last-child]:col-span-2 lg:[&>*:nth-child(odd):last-child]:col-span-1">
@@ -200,19 +201,17 @@ const BenefitCard = ({ icon, title, description }: { icon: React.ReactNode, titl
 );
 
 const ServiceCard = ({ title, items, image }: { title: string, items: string[], image: string }) => (
-    <div className="group rounded-3xl overflow-hidden bg-white shadow-2xl shadow-slate-900/10 hover:shadow-3xl hover:shadow-slate-900/20 transition-all h-full flex flex-col duration-500 hover:-translate-y-1">
-        <div className="h-40 md:h-56 overflow-hidden relative shrink-0">
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-60 group-hover:opacity-40 transition-opacity z-10" />
+    <div className="group rounded-3xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all h-full flex flex-col duration-500 hover:-translate-y-1 border border-slate-100">
+        <div className="h-48 md:h-64 overflow-hidden relative shrink-0">
+            <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/10 transition-colors z-10" />
             <img src={image} alt={title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
-            <div className="absolute bottom-0 left-0 p-4 md:p-6 z-20">
-                <h3 className="text-xl md:text-2xl font-bold text-white drop-shadow-md">{title}</h3>
-            </div>
         </div>
-        <div className="p-4 md:p-8 flex-grow bg-white">
+        <div className="p-5 md:p-8 flex-grow bg-white relative">
+            <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-4">{title}</h3>
             <ul className="space-y-2 md:space-y-3">
                 {items.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 md:gap-3 text-slate-600 text-sm md:text-base group/item">
-                        <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-secondary shrink-0 mt-0.5 group-hover/item:text-green-500 transition-colors" />
+                    <li key={i} className="flex items-start gap-3 text-slate-600 text-sm md:text-base group/item">
+                        <CheckCircle className="w-5 h-5 text-secondary shrink-0 mt-0.5 group-hover/item:text-green-500 transition-colors" />
                         <span className="font-medium">{item}</span>
                     </li>
                 ))}
