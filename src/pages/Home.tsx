@@ -18,9 +18,9 @@ const Home = () => {
                         transition={{ duration: 10, ease: "easeOut" }}
                         className="w-full h-full"
                     >
-                        <img src={heroBg} alt="Background" className="w-full h-full object-cover opacity-100" />
+                        <img src={heroBg} alt="Background" className="w-full h-full object-[center_30%] opacity-100" />
                     </motion.div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-slate-900/10" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent" />
                 </div>
 
                 <div className="container mx-auto px-4 z-10 relative mt-20">
