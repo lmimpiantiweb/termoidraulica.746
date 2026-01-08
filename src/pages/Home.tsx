@@ -10,30 +10,36 @@ const Home = () => {
     return (
         <div className="w-full overflow-hidden">
             {/* Hero Section */}
-            <section className="relative min-h-screen flex items-center justify-center bg-slate-900 border-b border-slate-800 pb-32">
-                <div className="absolute inset-0 z-0 overflow-hidden">
-                    <img src={heroBg} alt="Background" className="w-full h-full object-cover" />
-                    {/* Subtle gradient from bottom to improve text readability */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent" />
+            <section className="relative min-h-screen flex items-center justify-center bg-slate-900 border-b border-slate-800 pb-32 overflow-hidden">
+                <div className="absolute inset-0 z-0">
+                    <motion.div
+                        initial={{ scale: 1.1 }}
+                        animate={{ scale: 1 }}
+                        transition={{ duration: 10, ease: "easeOut" }}
+                        className="w-full h-full"
+                    >
+                        <img src={heroBg} alt="Background" className="w-full h-full object-cover opacity-60" />
+                    </motion.div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-slate-900/30" />
                 </div>
 
                 <div className="container mx-auto px-4 z-10 relative mt-20">
-                    <div className="max-w-4xl mx-auto text-center">
+                    <div className="max-w-5xl mx-auto text-center">
                         <motion.h1
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "circOut" }}
-                            className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight drop-shadow-2xl"
+                            className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight tracking-tight drop-shadow-2xl"
                         >
-                            Il tuo Idraulico di <span className="text-secondary">Fiducia</span>
+                            Il Tuo Idraulico di <br className="hidden md:block" /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-cyan-400">Fiducia</span>
                         </motion.h1>
                         <motion.p
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2, ease: "circOut" }}
-                            className="text-xl md:text-2xl text-slate-100 mb-12 leading-relaxed max-w-2xl mx-auto drop-shadow-lg font-medium"
+                            className="text-lg md:text-2xl text-slate-200 mb-12 leading-relaxed max-w-3xl mx-auto drop-shadow-lg font-medium antialiased"
                         >
-                            Interventi rapidi a Torino e dintorni, professionalità certificata e soluzioni su misura per il tuo comfort domestico.
+                            Interventi rapidi a <strong>Torino e provincia</strong>. Professionalità e soluzioni su misura per il tuo comfort.
                         </motion.p>
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
@@ -41,25 +47,26 @@ const Home = () => {
                             transition={{ duration: 0.8, delay: 0.4, ease: "circOut" }}
                             className="flex flex-col sm:flex-row items-center justify-center gap-6"
                         >
-                            <a href="tel:+393398321087" className="w-full sm:w-auto px-10 py-5 bg-secondary text-white rounded-2xl font-bold text-xl hover:bg-secondary/90 transition-all shadow-xl shadow-secondary/30 flex items-center justify-center gap-3 transform hover:-translate-y-1">
-                                Chiama Ora <Phone className="w-6 h-6" />
+                            <a href="tel:+393398321087" className="group w-full sm:w-auto px-10 py-5 bg-secondary text-white rounded-2xl font-bold text-xl hover:bg-secondary/90 transition-all shadow-xl shadow-secondary/20 flex items-center justify-center gap-3 transform hover:-translate-y-1 hover:shadow-2xl">
+                                Chiama Ora <Phone className="w-6 h-6 group-hover:rotate-12 transition-transform" />
                             </a>
-                            <Link to="/preventivo" className="w-full sm:w-auto px-10 py-5 bg-white/10 text-white rounded-2xl font-bold text-xl hover:bg-white/20 transition-all backdrop-blur-md border border-white/30 transform hover:-translate-y-1">
-                                Richiedi Preventivo
+                            <Link to="/preventivo" className="w-full sm:w-auto px-10 py-5 bg-white/5 text-white rounded-2xl font-bold text-xl hover:bg-white/10 transition-all backdrop-blur-md border border-white/10 flex items-center justify-center gap-3 transform hover:-translate-y-1">
+                                Richiedi Preventivo <ArrowRight className="w-5 h-5 opacity-70" />
                             </Link>
                         </motion.div>
                     </div>
                 </div>
-
-
             </section>
 
             {/* Services Preview - Now Primary/Overlapping */}
             <section className="py-12 md:py-20 bg-white relative z-20">
-                <div className="container mx-auto px-4 -mt-32 md:-mt-48">
-                    <div className="text-center mb-10 md:mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">I Nostri Servizi</h2>
-                        <p className="text-slate-100 max-w-2xl mx-auto drop-shadow-md font-medium text-lg">Offriamo una gamma completa di servizi termo-idraulici per privati e aziende.</p>
+                <div className="container mx-auto px-4 -mt-32 md:-mt-48 relative">
+                    <div className="text-center mb-12 md:mb-20">
+                        <div className="inline-block px-6 py-2 bg-slate-900/50 backdrop-blur-xl rounded-full border border-white/10 mb-6">
+                            <span className="text-secondary font-bold tracking-wider uppercase text-xs md:text-sm">I Nostri Servizi</span>
+                        </div>
+                        <h2 className="text-3xl md:text-6xl font-bold text-white mb-6 drop-shadow-xl tracking-tight">Soluzioni Complete</h2>
+                        <p className="text-slate-200 max-w-2xl mx-auto drop-shadow-md font-medium text-lg leading-relaxed antialiased opacity-90">Dall'installazione alla manutenzione, ci prendiamo cura del tuo impianto.</p>
                     </div>
 
                     <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 [&>*:nth-child(odd):last-child]:col-span-2 lg:[&>*:nth-child(odd):last-child]:col-span-1">
@@ -91,21 +98,21 @@ const Home = () => {
             {/* Benefits Section */}
             <section className="py-12 md:py-20 bg-slate-50 relative z-10">
                 <div className="container mx-auto px-4">
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-8 [&>*:nth-child(odd):last-child]:col-span-2 md:[&>*:nth-child(odd):last-child]:col-span-1">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-10 [&>*:nth-child(odd):last-child]:col-span-2 md:[&>*:nth-child(odd):last-child]:col-span-1">
                         <BenefitCard
-                            icon={<Clock className="w-10 h-10 text-secondary" />}
+                            icon={<Clock className="w-full h-full text-secondary" />}
                             title="Interventi Rapidi"
-                            description="Siamo operativi per risolvere guasti e malfunzionamenti nel minor tempo possibile."
+                            description="Operativi per emergenze con tempistiche ridotte."
                         />
                         <BenefitCard
-                            icon={<ShieldCheck className="w-10 h-10 text-secondary" />}
+                            icon={<ShieldCheck className="w-full h-full text-secondary" />}
                             title="Lavoro Garantito"
-                            description="Tutti i nostri interventi sono coperti da garanzia. Utilizziamo solo ricambi originali e materiali di alta qualità."
+                            description="Tutti gli interventi sono coperti da garanzia 100%."
                         />
                         <BenefitCard
-                            icon={<Wrench className="w-10 h-10 text-secondary" />}
+                            icon={<Wrench className="w-full h-full text-secondary" />}
                             title="Qualifica Certificata"
-                            description="Il nostro team è composto da tecnici specializzati e costantemente aggiornati sulle ultime normative."
+                            description="Tecnici specializzati e aggiornati sulle normative."
                         />
                     </div>
                 </div>
@@ -178,34 +185,44 @@ const Home = () => {
 
 // Subcontracts
 const BenefitCard = ({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) => (
-    <motion.div
-        whileHover={{ y: -5 }}
-        className="p-4 md:p-8 bg-white rounded-2xl border border-slate-100 shadow-xl shadow-slate-200/50 h-full flex flex-col"
-    >
-        <div className="mb-3 md:mb-6 p-2 md:p-4 bg-secondary/10 rounded-2xl w-fit transform scale-75 md:scale-100 origin-left">{icon}</div>
-        <h3 className="text-sm md:text-xl font-bold text-slate-900 mb-2 md:mb-3">{title}</h3>
-        <p className="text-xs md:text-base text-slate-600 leading-relaxed">{description}</p>
-    </motion.div>
+const BenefitCard = ({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) => (
+        <motion.div
+            whileHover={{ y: -5 }}
+            className="group p-5 md:p-8 bg-white rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/40 hover:shadow-2xl hover:shadow-secondary/5 transition-all duration-300 h-full flex flex-col items-center text-center"
+        >
+            <div className="mb-4 md:mb-6 p-3 md:p-5 bg-slate-50 rounded-2xl w-12 h-12 md:w-20 md:h-20 flex items-center justify-center group-hover:bg-secondary/10 transition-colors">
+                <div className="w-6 h-6 md:w-10 md:h-10 text-secondary transition-transform group-hover:scale-110 duration-300">
+                    {icon}
+                </div>
+            </div>
+            <h3 className="text-base md:text-xl font-bold text-slate-900 mb-2 md:mb-3">{title}</h3>
+            <p className="text-sm md:text-base text-slate-500 leading-relaxed max-w-xs">{description}</p>
+        </motion.div>
+    );
 );
 
 const ServiceCard = ({ title, items, image }: { title: string, items: string[], image: string }) => (
-    <div className="group rounded-2xl overflow-hidden bg-white border border-slate-100 shadow-lg hover:shadow-xl transition-all h-full flex flex-col">
-        <div className="h-32 md:h-48 overflow-hidden relative shrink-0">
-            <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-slate-900/10 transition-colors z-10" />
-            <img src={image} alt={title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
+const ServiceCard = ({ title, items, image }: { title: string, items: string[], image: string }) => (
+        <div className="group rounded-3xl overflow-hidden bg-white shadow-2xl shadow-slate-900/10 hover:shadow-3xl hover:shadow-slate-900/20 transition-all h-full flex flex-col duration-500 hover:-translate-y-1">
+            <div className="h-40 md:h-56 overflow-hidden relative shrink-0">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-60 group-hover:opacity-40 transition-opacity z-10" />
+                <img src={image} alt={title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+                <div className="absolute bottom-0 left-0 p-4 md:p-6 z-20">
+                    <h3 className="text-xl md:text-2xl font-bold text-white drop-shadow-md">{title}</h3>
+                </div>
+            </div>
+            <div className="p-4 md:p-8 flex-grow bg-white">
+                <ul className="space-y-2 md:space-y-3">
+                    {items.map((item, i) => (
+                        <li key={i} className="flex items-start gap-2 md:gap-3 text-slate-600 text-sm md:text-base group/item">
+                            <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-secondary shrink-0 mt-0.5 group-hover/item:text-green-500 transition-colors" />
+                            <span className="font-medium">{item}</span>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
-        <div className="p-3 md:p-6 flex-grow">
-            <h3 className="text-lg md:text-2xl font-bold text-slate-900 mb-2 md:mb-4">{title}</h3>
-            <ul className="space-y-1.5 md:space-y-3">
-                {items.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 md:gap-3 text-slate-600 text-xs md:text-base">
-                        <CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-green-500 shrink-0 mt-0.5" />
-                        <span>{item}</span>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    </div>
+    );
 );
 
 export default Home;
