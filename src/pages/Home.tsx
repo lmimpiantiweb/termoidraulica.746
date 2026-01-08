@@ -57,7 +57,7 @@ const Home = () => {
             {/* Benefits Section */}
             <section className="py-12 md:py-20 bg-white relative z-20">
                 <div className="container mx-auto px-4 -mt-32 md:-mt-48">
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-8 [&>*:nth-child(odd):last-child]:col-span-2 md:[&>*:nth-child(odd):last-child]:col-span-1">
                         <BenefitCard
                             icon={<Clock className="w-10 h-10 text-secondary" />}
                             title="Interventi Rapidi"
@@ -85,7 +85,7 @@ const Home = () => {
                         <p className="text-slate-600 max-w-2xl mx-auto">Offriamo una gamma completa di servizi termo-idraulici per privati e aziende.</p>
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 [&>*:nth-child(odd):last-child]:col-span-2 lg:[&>*:nth-child(odd):last-child]:col-span-1">
                         <ServiceCard
                             title="Impianti Termici"
                             items={['Installazione caldaie a condensazione', 'Manutenzione impianti idraulici', 'Pompe di calore']}

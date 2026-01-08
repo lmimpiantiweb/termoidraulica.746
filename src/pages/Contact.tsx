@@ -28,7 +28,7 @@ const Contact = () => {
             </div>
 
             <div className="container mx-auto px-4 py-16 -mt-10 relative z-20">
-                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 [&>*:nth-child(odd):last-child]:col-span-2 lg:[&>*:nth-child(odd):last-child]:col-span-1">
 
                     {/* Emergency / Phone Card */}
                     <motion.div
