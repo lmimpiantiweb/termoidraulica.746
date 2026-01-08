@@ -157,7 +157,7 @@ const Home = () => {
                                 <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Passione e Professionalità</h2>
                             </div>
                             <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                                La dedizione di <span className="font-bold text-slate-900">Giorgio Piras</span> e del suo team assicura un servizio che unisce competenza tecnica e attenzione ai dettagli.
+                                La dedizione di <span className="font-bold text-slate-900">Marco Laviano</span> e del suo team assicura un servizio che unisce competenza tecnica e attenzione ai dettagli.
                             </p>
                             <Link to="/contatti" className="inline-flex items-center gap-2 text-secondary font-bold hover:underline">
                                 Parla con noi <ArrowRight className="w-4 h-4" />
