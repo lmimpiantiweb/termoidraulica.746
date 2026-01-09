@@ -21,44 +21,35 @@ const Quote = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onDetailsSubmit = () => setStep('contact');
-
     const onContactSubmit = async (data: any) => {
         setIsSubmitting(true);
 
         try {
+            const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfcXyBYP9S2Vj8NOpy3BZi8EhNCDb6oY9KPtzlyGjIqRmh8XA/formResponse';
+
             const selectedCategoryLabel = categories.find(c => c.id === category)?.label || category || '';
 
-            const subject = `Richiesta Preventivo: ${selectedCategoryLabel}`;
-            const body = `
-Gentile LM Impianti,
+            const formData = new FormData();
+            formData.append('entry.700896625', selectedCategoryLabel); // Category
+            formData.append('entry.864693341', data.description); // Description
+            formData.append('entry.235223577', data.fullName); // Full Name
+            formData.append('entry.287687410', data.email); // Email
+            formData.append('entry.738990307', data.phone); // Phone
+            formData.append('entry.1758535097', data.location); // Location
 
-Vorrei richiedere un preventivo per: ${selectedCategoryLabel}
+            await fetch(GOOGLE_FORM_URL, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' // Necessary for Google Forms
+            });
 
-Dettagli Richiesta:
-${data.description}
-
-I miei dati:
-Nome: ${data.fullName}
-Email: ${data.email}
-Telefono: ${data.phone}
-Zona: ${data.location}
-
-Cordiali saluti,
-${data.fullName}
-            `.trim();
-
-            const mailtoLink = `mailto:lm.impianti.web@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-            // Open default mail client
-            window.location.href = mailtoLink;
-
-            // Show success message after a short delay to allow the mail client to open
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            // Minimum loading time for better UX
+            await new Promise(resolve => setTimeout(resolve, 1500));
 
             setStep('success');
         } catch (error) {
             console.error('Error submitting form:', error);
-            alert('Si è verificato un errore. Per favore contattaci telefonicamente.');
+            alert('Si è verificato un errore. Riprova o contattaci telefonicamente.');
         } finally {
             setIsSubmitting(false);
         }
