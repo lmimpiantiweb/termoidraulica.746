@@ -91,7 +91,7 @@ const Home = () => {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2, ease: "circOut" }}
-                            className="text-lg md:text-2xl text-cyan-100 mb-12 leading-relaxed max-w-3xl mx-auto drop-shadow-lg font-medium antialiased"
+                            className="text-xl md:text-3xl text-white mb-12 leading-relaxed max-w-3xl mx-auto drop-shadow-lg font-medium antialiased"
                         >
                             Interventi rapidi a <strong>Torino e provincia</strong>. Professionalità e soluzioni su misura per il tuo comfort.
                         </motion.p>
