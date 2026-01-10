@@ -104,8 +104,8 @@ const Contact = () => {
                             </div>
                             <div className="bg-slate-50 p-3 md:p-4 rounded-xl">
                                 <strong className="block text-slate-900 mb-1 text-xs md:text-sm uppercase tracking-wide">Sede Operativa</strong>
-                                <span className="text-xs md:text-base">Via Assietta, 6</span><br />
-                                <span className="text-xs md:text-base">10040 Druento (TO)</span>
+                                <span className="text-xs md:text-base">Via Frassineto, 42</span><br />
+                                <span className="text-xs md:text-base">10139 Torino (TO)</span>
                             </div>
                         </div>
                     </motion.div>
