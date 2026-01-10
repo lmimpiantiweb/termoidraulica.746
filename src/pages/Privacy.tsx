@@ -1,9 +1,16 @@
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const Privacy = () => {
     return (
         <div className="pt-20 min-h-screen bg-slate-50">
+            <SEO
+                title="Privacy Policy | LM Impianti"
+                description="Informativa sulla privacy di LM Impianti. Scopri come trattiamo i tuoi dati in conformità con il GDPR."
+                canonical="/privacy"
+                noindex={true}
+            />
             <div className="container mx-auto px-4 py-12 max-w-4xl">
                 <Link to="/" className="inline-flex items-center gap-2 text-slate-500 hover:text-slate-900 mb-8 transition-colors">
                     <ArrowLeft className="w-4 h-4" /> Torna alla Home

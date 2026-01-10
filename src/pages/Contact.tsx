@@ -1,10 +1,16 @@
 import { Phone, Mail, Clock, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
 
 const Contact = () => {
     return (
         <div className="pt-20 min-h-screen bg-slate-50">
+            <SEO
+                title="Contatti Idraulico Torino | LM Impianti - 339 832 1087"
+                description="Hai bisogno di un idraulico? Contattaci per urgenze, preventivi o informazioni. Telefono: 339 832 1087. Email: lm.impianti.web@gmail.com."
+                canonical="/contatti"
+            />
             {/* Hero Section */}
             <div className="bg-slate-900 py-24 text-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581094794329-cd67b9355999?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=20')] opacity-10 bg-cover bg-center" />

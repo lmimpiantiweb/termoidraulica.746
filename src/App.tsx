@@ -1,6 +1,7 @@
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -20,22 +21,24 @@ const ScrollToTop = () => {
 
 function App() {
   return (
-    <Router>
-      <div className="min-h-screen flex flex-col bg-slate-50">
-        <ScrollToTop />
-        <Navbar />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/servizi" element={<Services />} />
-            <Route path="/preventivo" element={<Quote />} />
-            <Route path="/contatti" element={<Contact />} />
-            <Route path="/privacy" element={<Privacy />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <div className="min-h-screen flex flex-col bg-slate-50">
+          <ScrollToTop />
+          <Navbar />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/servizi" element={<Services />} />
+              <Route path="/preventivo" element={<Quote />} />
+              <Route path="/contatti" element={<Contact />} />
+              <Route path="/privacy" element={<Privacy />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 }
 

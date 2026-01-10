@@ -6,9 +6,63 @@ import plumbingImg from '../assets/plumbing.png';
 import bathroomImg from '../assets/bathroom.png';
 import heroBg from '../assets/hero-bg-updated.jpg';
 
+import SEO from '../components/SEO';
+
 const Home = () => {
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "Plumber",
+        "name": "LM Impianti",
+        "image": "https://lavianoimpianti.it/assets/hero-bg-updated.jpg",
+        "@id": "https://lavianoimpianti.it",
+        "url": "https://lavianoimpianti.it",
+        "telephone": "+393398321087",
+        "priceRange": "€€",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Via Frassineto, 42",
+            "addressLocality": "Torino",
+            "postalCode": "10139",
+            "addressCountry": "IT"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 45.0692714,
+            "longitude": 7.6374502
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday"
+                ],
+                "opens": "08:00",
+                "closes": "18:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "08:00",
+                "closes": "13:00"
+            }
+        ],
+        "sameAs": [
+            "https://www.linkedin.com/in/marco-laviano-89953232/"
+        ]
+    };
+
     return (
         <div className="w-full overflow-hidden">
+            <SEO
+                title="Idraulico Torino | LM Impianti - Caldaie e Ristrutturazioni"
+                description="Idraulico a Torino esperto in installazione caldaie, ristrutturazione bagni e impianti termoidraulici. Interventi rapidi e preventivi gratuiti."
+                canonical="/"
+                structuredData={structuredData}
+            />
             {/* Hero Section */}
             <section className="relative min-h-screen flex items-center justify-center bg-slate-900 border-b border-slate-800 pb-48 overflow-hidden">
                 <div className="absolute inset-0 z-0">
@@ -58,7 +112,6 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Services Preview - Now Primary/Overlapping */}
             {/* Services Preview */}
             <section className="py-12 md:py-20 bg-white relative z-20 rounded-t-[3rem] -mt-20 shadow-[0_-20px_40px_-15px_rgba(0,0,0,0.1)]">
                 <div className="container mx-auto px-4 relative">

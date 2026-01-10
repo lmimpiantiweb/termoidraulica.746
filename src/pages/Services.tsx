@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import heatingImg from '../assets/heating.png';
 import coolingImg from '../assets/cooling.png';
 import bathroomImg from '../assets/bathroom.png';
+import SEO from '../components/SEO';
 
 const Services = () => {
     const serviceList = [
@@ -29,6 +30,11 @@ const Services = () => {
 
     return (
         <div className="pt-20">
+            <SEO
+                title="Servizi Idraulici | Sostituzione Caldaie e Ristrutturazione Bagni"
+                description="Scopri i nostri servizi: installazione caldaie a condensazione, impianti di climatizzazione, rifacimento bagni e riparazioni idrauliche. Professionalità garantita."
+                canonical="/servizi"
+            />
             <div className="bg-slate-900 py-12 md:py-20 text-center">
                 <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">I Nostri Servizi</h1>
                 <p className="text-slate-300 text-lg max-w-2xl mx-auto px-4">Qualità, innovazione e risparmio energetico per la tua casa.</p>

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Wrench, Snowflake, Droplets, Home, ArrowRight, CheckCircle, Loader2 } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 type Step = 'category' | 'details' | 'contact' | 'success';
 
@@ -57,6 +58,11 @@ const Quote = () => {
 
     return (
         <div className="min-h-screen bg-slate-50 py-12 px-4">
+            <SEO
+                title="Preventivo Idraulico Online | LM Impianti Termoidraulica"
+                description="Richiedi un preventivo gratuito per sostituzione caldaia, condizionatori o ristrutturazione bagno. Compila il modulo in pochi click."
+                canonical="/preventivo"
+            />
             <div className="container mx-auto max-w-4xl">
                 <div className="text-center mb-12">
                     <h1 className="text-4xl font-bold text-slate-900 mb-4">Richiedi un Preventivo Gratuito</h1>
