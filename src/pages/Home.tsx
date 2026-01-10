@@ -58,8 +58,8 @@ const Home = () => {
     return (
         <div className="w-full overflow-hidden">
             <SEO
-                title="Idraulico Torino | LM Impianti - Caldaie e Ristrutturazioni"
-                description="Idraulico a Torino esperto in installazione caldaie, ristrutturazione bagni e impianti termoidraulici. Interventi rapidi e preventivi gratuiti."
+                title="Idraulico Torino | LM Impianti - Pronto Intervento Caldaie e Bagni"
+                description="Sei di Torino? Idraulico rapido e professionale per caldaie, bagni e riparazioni urgenti. Interventi garantiti in Torino e provincia. Chiama ora!"
                 canonical="/"
                 structuredData={structuredData}
             />
