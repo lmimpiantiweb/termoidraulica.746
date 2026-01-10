@@ -18,7 +18,7 @@ const Footer = () => {
                         <a href="https://www.linkedin.com/in/marco-laviano-89953232/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center hover:bg-secondary transition-colors text-white">
                             <Linkedin className="w-5 h-5" />
                         </a>
-                        <a href="https://www.google.com/maps/place/Impianti+di+Laviano+Marco/@45.0621002,7.6732973,17z/data=!3m1!4b1!4m6!3m5!1s0x47886d3aacb465db:0xea08a4efde43ffa2!8m2!3d45.0621002!4d7.6758722!16s%2Fg%2F11h2j_ndxw?entry=ttu&g_ep=EgoyMDI2MDEwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center hover:bg-secondary transition-colors text-white">
+                        <a href="https://www.google.com/maps/place/Via+Frassineto,+42,+10139+Torino+TO/@45.0692714,7.6374502,615m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47886cef0491f3a7:0xeb0c9ecab869c1be!8m2!3d45.0692714!4d7.6400251!16s%2Fg%2F11bw4n41_y?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center hover:bg-secondary transition-colors text-white">
                             <MapPin className="w-5 h-5" />
                         </a>
                         <a href="https://wa.me/393398321087" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center hover:bg-secondary transition-colors text-white">
