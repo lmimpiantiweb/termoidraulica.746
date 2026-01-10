@@ -21,12 +21,10 @@ if (!fs.existsSync(indexPath)) {
 }
 
 routes.forEach(route => {
-    const routeDir = path.join(distPath, route);
-    if (!fs.existsSync(routeDir)) {
-        fs.mkdirSync(routeDir, { recursive: true });
-    }
-    fs.copyFileSync(indexPath, path.join(routeDir, 'index.html'));
-    console.log(`Generated static route: ${route}/index.html`);
+    // Generate route.html (e.g., servizi.html)
+    const routeFile = path.join(distPath, `${route}.html`);
+    fs.copyFileSync(indexPath, routeFile);
+    console.log(`Generated static route: ${route}.html`);
 });
 
 console.log('✅ Static routes generation complete.');
