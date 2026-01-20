@@ -1,5 +1,6 @@
-import { ThermometerSun, MapPin, Mail, Phone, Linkedin } from 'lucide-react';
+import { MapPin, Mail, Phone, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/logo.png';
 
 const Footer = () => {
     return (
@@ -8,7 +9,7 @@ const Footer = () => {
                 {/* Brand */}
                 <div>
                     <div className="flex items-center gap-2 text-white font-bold text-2xl mb-6">
-                        <ThermometerSun className="w-8 h-8 text-secondary" />
+                        <img src={logo} alt="LM Impianti" className="h-12 w-auto object-contain" />
                         <span>LM <span className="text-secondary">Impianti</span></span>
                     </div>
                     <p className="leading-relaxed mb-6">

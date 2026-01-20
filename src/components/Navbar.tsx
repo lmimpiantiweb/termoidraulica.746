@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, ThermometerSun } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import { cn } from '../lib/utils';
+import logo from '../assets/logo.png';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 
 const Navbar = () => {
@@ -69,7 +70,7 @@ const Navbar = () => {
             <div className="container mx-auto px-4 h-20 flex items-center justify-between">
                 {/* Logo */}
                 <Link to="/" className="flex items-center gap-2 text-primary font-bold text-2xl">
-                    <ThermometerSun className="w-8 h-8 text-secondary" />
+                    <img src={logo} alt="LM Impianti" className="h-12 w-auto object-contain" />
                     <span>LM <span className="text-secondary">Impianti</span></span>
                 </Link>
 
