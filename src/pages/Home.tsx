@@ -85,7 +85,7 @@ const Home = () => {
                             transition={{ duration: 0.8, ease: "circOut" }}
                             className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight tracking-tight drop-shadow-2xl"
                         >
-                            Il Tuo Idraulico di <br className="hidden md:block" /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-cyan-400">Fiducia</span>
+                            Idraulica Torino: <br className="hidden md:block" /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-cyan-400">sicurezza e tranquillità</span> a portata di casa.
                         </motion.h1>
                         <motion.p
                             initial={{ opacity: 0, y: 30 }}
