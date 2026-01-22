@@ -77,7 +77,7 @@ const Home = () => {
                         transition={{ duration: 10, ease: "easeOut" }}
                         className="w-full h-full"
                     >
-                        <img src={heroBg} alt="Background" className="w-full h-full object-cover object-[center_30%] opacity-100" />
+                        <img src={heroBg} alt="Background" className="w-full h-full object-cover object-[center_30%] opacity-100" fetchPriority="high" loading="eager" />
                     </motion.div>
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent" />
                 </div>
@@ -266,7 +266,7 @@ const ServiceCard = ({ title, items, image }: { title: string, items: string[], 
     <div className="group rounded-3xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all h-full flex flex-col duration-500 hover:-translate-y-1 border border-slate-100">
         <div className="h-48 md:h-64 overflow-hidden relative shrink-0">
             <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/10 transition-colors z-10" />
-            <img src={image} alt={title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+            <img src={image} alt={title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" />
         </div>
         <div className="p-5 md:p-8 flex-grow bg-white relative">
             <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-4">{title}</h3>

@@ -50,7 +50,7 @@ const Services = () => {
                                 viewport={{ once: true }}
                                 className="rounded-3xl overflow-hidden shadow-2xl relative h-[400px]"
                             >
-                                <img src={service.img} alt={service.title} className="w-full h-full object-cover" />
+                                <img src={service.img} alt={service.title} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent" />
                             </motion.div>
                         </div>
