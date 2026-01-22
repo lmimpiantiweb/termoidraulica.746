@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lavianoimpianti.it/sitemap.xml
+Sitemap: https://idraulicoatorinosrls.it/sitemap.xml

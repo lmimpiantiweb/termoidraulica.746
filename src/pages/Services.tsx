@@ -31,8 +31,8 @@ const Services = () => {
     return (
         <div className="pt-20">
             <SEO
-                title="Servizi Idraulici | Sostituzione Caldaie e Ristrutturazione Bagni"
-                description="Scopri i nostri servizi: installazione caldaie a condensazione, impianti di climatizzazione, rifacimento bagni e riparazioni idrauliche. Professionalità garantita."
+                title="Servizi Idraulici a Torino | Caldaie, Bagni e Riparazioni"
+                description="Servizi idraulici completi a Torino e provincia. Installazione caldaie, ristrutturazione bagni e manutenzione impianti. Idraulico esperto a tua disposizione."
                 canonical="/servizi"
             />
             <div className="bg-slate-900 py-12 md:py-20 text-center">

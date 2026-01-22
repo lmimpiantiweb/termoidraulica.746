@@ -13,10 +13,11 @@ const Home = () => {
         "@context": "https://schema.org",
         "@type": "Plumber",
         "name": "LM Impianti",
-        "image": "https://lavianoimpianti.it/assets/hero-bg-updated.jpg",
-        "@id": "https://lavianoimpianti.it",
-        "url": "https://lavianoimpianti.it",
+        "image": "https://idraulicoatorinosrls.it/assets/hero-bg-updated.jpg",
+        "@id": "https://idraulicoatorinosrls.it",
+        "url": "https://idraulicoatorinosrls.it",
         "telephone": "+393398321087",
+        "description": "LM Impianti offre servizi di idraulica a Torino e provincia. Specializzati in riparazioni urgenti, installazione caldaie, ristrutturazione bagni e impianti di climatizzazione.",
         "priceRange": "€€",
         "address": {
             "@type": "PostalAddress",
@@ -29,6 +30,10 @@ const Home = () => {
             "@type": "GeoCoordinates",
             "latitude": 45.0692714,
             "longitude": 7.6374502
+        },
+        "areaServed": {
+            "@type": "City",
+            "name": "Torino"
         },
         "openingHoursSpecification": [
             {
@@ -58,8 +63,8 @@ const Home = () => {
     return (
         <div className="w-full overflow-hidden">
             <SEO
-                title="Idraulico Torino | LM Impianti - Pronto Intervento Caldaie e Bagni"
-                description="Sei di Torino? Idraulico rapido e professionale per caldaie, bagni e riparazioni urgenti. Interventi garantiti in Torino e provincia. Chiama ora!"
+                title="Idraulico Torino | LM Impianti - Pronto Intervento Idraulico a Torino"
+                description="Cerchi un idraulico a Torino? Interventi rapidi e professionali su caldaie, bagni e riparazioni urgenti. Preventivi gratuiti in Torino e provincia."
                 canonical="/"
                 structuredData={structuredData}
             />

@@ -10,7 +10,7 @@ interface SEOProps {
 }
 
 const SEO = ({ title, description, canonical, noindex = false, structuredData }: SEOProps) => {
-    const siteUrl = 'https://lavianoimpianti.it';
+    const siteUrl = 'https://idraulicoatorinosrls.it';
     const fullCanonical = canonical ? `${siteUrl}${canonical}` : siteUrl;
 
     return (
